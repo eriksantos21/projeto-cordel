@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+
+:root{
+    --fonte1: verdana, geneva, tahoma, sans-serif;
+    --fonte2: "Passion One", sans-serif;
+    --fonte3: "Inconsolata", monospace, 900;
+
+} /*configuração das variáveis. Ao criar essas variáveis, eu posso utilzá-las colando nas minhas configurações de header, sections,etc..*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+} /*configurações gerais*/
+
+html, body{
+    min-height: 100vh; /*o tamanho mínimo da minha viewport. Pode ser 100% também. vh: altura da minha viewport (height), vw: largura da minha viewport* (width)*/ 
+    background-color: darkgray;
+    font-family: var(--fonte1);
+} /*configurações em comuns. Tanto html, quanto body*/
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center; /*centraliza o texto (o título)*/
+}
+
+header > h1{
+    padding-top: 50px; /*alteração do padding somente em cima*/
+    /*text-transform: uppercase; deixa todas as letras maiúsculas*/
+    font-variant: small-caps; /*na variante de fontes, o small-caps também deixa a letra maiúscula, porém destaca a primeira letra da palavra*/
+    font-family: var(--fonte2);
+    font-size: 10vw;
+}
+
+header > p{
+    padding-bottom: 50px; /*alteração do somente padding em baixo*/
+    
+}
+
+header a, footer a{
+    color: white;
+    text-decoration: none; /* link sem sublinhado*/
+
+} /*configuração do link, serve para o cabeçalho e o rodapé*/
+
+header a:hover, footer a:hover{
+    text-decoration: underline; /*sublinhado aparece somente quando o mouse passar por cima do link*/
+
+} /*interações do link, serve para o cabeçalho e o rodapé*/
+
+section{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em; /*espaçamento duplo entre as linhas*/
+    padding: 30px;
+    font-family: var(--fonte3);
+    font-size: 3.5vw; /*baseado na largura da tela, o (viewport-width) aumenta ou diminui de acordo com a largura da viewport*/;
+
+} /*irá servir tanto para a section normal, quanto para a section imagem*/
+section.normal{
+    background-color: white;
+    color: black;
+
+}
+section > p{
+    padding-bottom: 2em;
+}
+
+section.imagem{
+    background-color: rgb(51,51,51);
+    color:white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.473); /*o tipo inset é a sombra para dentro*/
+    background-size: cover;
+    background-attachment: fixed; /*essa função deu o efeito Parallax no meu projeto*/
+}
+
+section.imagem > p {
+    background-color: rgb(0,0, 0, 0.514);
+    display: inline-block; /*essa função faz com que a caixa se adapta ao tamanho do conteúdo*/
+    padding: 5px;
+    text-shadow: 2px 1px 0px black; /*essa função permite colocar sombras no texto. Ajustamos o posicionamento, espalhamento e a cor*/
+} /*configurações de todos os parágrafos que tiverem a imagem*/
+
+section#img01{
+    background-image: url("../imagens/background001.jpg");
+    background-position: right center;
+
+} /*id é um elemento único para aplicar estilos a um único elemento específico do HTML*/
+
+section#img02{
+    background-image: url("../imagens/background002.jpg");
+    background-position: right bottom;
+
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
